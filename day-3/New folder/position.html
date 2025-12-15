@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <style>
+            .container{
+                width: 300px;
+                height: 200px;
+                background: lightgray;
+                position: relative;
+                margin: 20px auto;
+            }
+            .box{
+                width: 80px;
+                height: 80px;
+                color: white;
+                text-align: center;
+                line-height: 80px;
+                font-family: Arial;
+            }
+            .relative{
+                position: relative;
+                top: 20px;
+                left: 100px;
+                background: green;
+            }
+            .static{
+                position: static;
+                /*can't use left,right,top,bottom*/
+                background:brown;
+            }
+            .absolute{
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                background: blue;
+            }
+            .fixed{
+                position: fixed;
+                color: white;
+                bottom: 10px;
+                right: 10px;
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Position Demo</h3>
+        <div class="container">
+            <div class="box relative">Relative</div>
+            <div class="box static">Static</div>
+            <div class="box absolute">Absolute</div>
+        </div>
+            <div class="box fixed">Fixed</div>
+    </body>
+</html>
