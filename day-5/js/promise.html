@@ -1,0 +1,28 @@
+<html>
+    <body>
+    <!--its a javascript object helps us to know result of our request
+    result
+    1.success
+    2.failure
+    3.waiting
+    promise is an object of javascript-->
+    <script>
+        //create a promise
+        const mypromise=new Promise((resolve,reject)=>{
+            let success=false;
+
+            if(success){
+                resolve("task completed!");
+            }else{
+                reject("task failed!")
+            }
+        });
+
+        //use the promise
+        mypromise
+            .then(result=>console.log(result)) //runs if resolved
+            .catch(error=>console.log(error)) //runs if rejected
+            .finally(()=>console.log("promise finished")) 
+    </script>
+    </body>
+</html>

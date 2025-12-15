@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <button id="btn">Don't touch me!</button>
+        <h1 id="msg"></h1>
+        <img  src="" alt="" id="img" style="width: 300px;">
+        
+    </body>
+    <script>
+            /*Event listener is a JS function.That waits for a specific event like single click,double click,right click..
+            on a web page element and run the code in response when that event occurs.*/
+            //NOTE: since it's a clear javascript function it can accept arguments or we can pass arguments
+            //it takes two arguments one is event another one is function(arrow argument)
+
+            const btn=document.getElementById("btn");
+            const msg=document.getElementById("msg");
+
+            btn.addEventListener("click",()=>{
+                msg.textContent="I showed the power of AC!";
+                btn.textContent="clicked!";
+                document.getElementById("img").src = "tesla.jpg";
+            })
+        </script>
+</html>

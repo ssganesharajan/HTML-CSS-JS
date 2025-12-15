@@ -1,0 +1,21 @@
+<!-- Destructuring it's a way to quickly unpack values from arrays
+  or properties from objects into seperate variables. -->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            const numbers=[10,20,30];
+            const [first, ,third]=numbers;
+            console.log("First:",first);
+            console.log("Third:",third);
+
+            //Object destructuring
+            const person={name:"ganesh",age:22};
+            const{name,age,city="coimbatore"}=person;//default valur for city
+            console.log("Name:",name);
+            console.log("Age:",age);
+            console.log("City:",city);
+        </script>
+    </body>
+</html>

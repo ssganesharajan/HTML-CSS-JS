@@ -1,0 +1,19 @@
+<html>
+    <body>
+    <script>
+        const booking=new Promise((booked,filled)=>{
+            let success=true;
+
+            if(success){
+                booked("booked to location!");
+            }else{
+                filled("task failed!")
+            }
+        });
+        booking
+            .then(result=>console.log(result))
+            .catch(error=>console.log(error))
+            .finally(()=>console.log("promise finished")) 
+    </script>
+    </body>
+</html>

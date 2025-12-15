@@ -1,0 +1,47 @@
+<html>
+<body>
+
+<h1 id="h1">Saturday Vibe</h1>
+<button onclick="change()">CHANGE ME</button>
+
+<h1 id="h2" style="color: blue;">KIT</h1>
+<button onclick="changecolor()">CHANGE COLOR</button>
+
+<h1 id="h3" style="color: grey;">KIT</h1>
+<button onclick="changebgcolor()">CHANGE BGCOLOR</button>
+
+<h1 id="h4" style="color: violet;">KIT</h1>
+<button onclick="size()">CHANGE SIZE</button>
+
+<h1 id="h5">Saturday Vibe</h1>
+<button onclick="con()">CHANGE ME</button>
+
+<script>
+    function change(){
+    document.getElementById("h1").innerHTML="Sunday on way";
+    }
+
+    function changecolor(){
+        document.getElementById("h2").style.color="red";
+    }
+
+    function changebgcolor(){
+        document.getElementById("h3").style.background="black";
+    }
+
+    function size(){
+        document.getElementById("h4").style.fontSize="100px";
+    }
+
+    function con(){
+        let val=document.getElementById('h5');
+        if(val.textContent=="Saturday Vibe"){
+            val.textContent="Sunday on way"
+        }
+        else{
+            val.textContent="Saturday Vibe"
+        }
+    }
+</script>
+</body>
+</html>

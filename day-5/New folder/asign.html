@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tribute</title>
+
+<style>
+body{
+    background-color: lightgrey;
+    text-align: center;
+}
+#button{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+img{
+    margin-top: 50px;
+    width: 300px;
+}
+
+.top{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: antiquewhite;
+    gap: 100px;
+    justify-content: space-around;
+}
+
+#h1{
+    padding: 10px;  
+    background-color: rgb(255, 177, 104);
+    border-radius: 10px;
+}
+
+#btn{
+    background-color: lightgrey;
+    border: none;
+    padding: 5px;
+    color: blue;
+    font-size: 15px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Tribute to Stars</h1>
+
+<div class="top">
+   <h1 id="h1">SCIENTIST</h1>
+</div>
+
+<img id="image" src="tesla.jpg">
+
+<br><br>
+
+<button onclick="showTesla()" id="button">Tesla</button>
+<button onclick="showKarnan()" id="button">Karnan</button><br><br>
+<h3 id="About">About Tesla</h3>
+<span id="para">
+   Nikola Tesla is famous for pioneering alternating current (AC) electricity, which powers our modern world, and inventing key technologies like the AC induction motor, Tesla coil, radio, and remote control, laying groundwork for wireless communication, robotics, and much more, despite not always getting financial credit 
+</span>
+    <button onclick="readMore()" id="btn">Read more</button>
+
+<script>
+function showTesla(){
+    document.getElementById("image").src = "tesla.jpg";
+    document.getElementById("About").innerHTML="About Tesla";
+    document.getElementById("para").innerHTML="Nikola Tesla is famous for pioneering alternating current (AC) electricity, which powers our modern world, and inventing key technologies like the AC induction motor, Tesla coil, radio, and remote control, laying groundwork for wireless communication, robotics, and much more, despite not always getting financial credit ";
+     document.getElementById("h1").innerHTML = "SCIENTIST";
+}
+
+function showKarnan(){
+    document.getElementById("image").src = "karnan.jpg";
+    document.getElementById("About").innerHTML="About Karnan";
+    document.getElementById("para").innerHTML="An unparalleled archer and warrior, blessed by Surya and trained by Parashurama (though cursed by him for lying about his caste), he possessed divine weapons like the Vijaya bow"; 
+    document.getElementById("h1").innerHTML = "WARRIOR";
+}
+
+  function readMore(){
+    if(document.getElementById("About").innerHTML=="About Tesla"){
+        
+    }
+}
+</script>
+
+</body>
+</html>

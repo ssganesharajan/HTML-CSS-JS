@@ -1,0 +1,21 @@
+<!-- JS object
+Multiple elements can be stored in one variable and
+elements can be of different data types -->
+<html>
+<script>
+    const car={
+        brand:"Toyota",
+        model:"corolla",
+        year:"2020",
+        start:function(){
+            return "car started!";
+        }
+    };
+//accessing properties
+console.log(car.brand);//toyota
+console.log(car["year"]);//2020
+
+//calling method
+console.log(car.start());//car started
+</script>
+</html>
