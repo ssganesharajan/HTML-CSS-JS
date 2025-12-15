@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <label>Input 1:</label>
+        <input type="number" id="a" placeholder="Enter number"><br><br>
+        <label>Input 2:</label>
+        <input type="number" id="b" placeholder="Enter number"><br><br>
+        <button onclick="add()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mul()">*</button>
+        <button onclick="div()">/</button><br><br>
+        <label>Output:</label>
+        <h2 type="number" id="result">
+    </body>
+    <script>
+        function add(){
+            let n1=Number(document.getElementById("a").value);
+            let n2=Number(document.getElementById("b").value);
+
+            let sum=n1+n2;
+
+            document.getElementById("result").innerHTML=sum;
+        }
+
+        function sub(){
+            let n1=Number(document.getElementById("a").value);
+            let n2=Number(document.getElementById("b").value);
+
+            let sum=n1-n2;
+
+            document.getElementById("result").innerHTML=sum;
+        }
+
+        function mul(){
+            let n1=Number(document.getElementById("a").value);
+            let n2=Number(document.getElementById("b").value);
+
+            let sum=n1*n2;
+
+            document.getElementById("result").innerHTML=sum;
+        }
+
+        function div(){
+            let n1=Number(document.getElementById("a").value);
+            let n2=Number(document.getElementById("b").value);
+
+            let sum=n1/n2;
+
+            document.getElementById("result").innerHTML=sum;
+        }
+    </script>
+</html>

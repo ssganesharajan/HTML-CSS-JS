@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <input id="userMsg" placeholder="Type something">
+        <button onclick="showMsg()">SUBMIT</button><br>
+        <h2 id="msg"></h2>
+    </body>
+    <script>
+        function showMsg(){
+            let text=document.getElementById("userMsg").value;
+            document.getElementById("msg").innerHTML=text;
+        }
+    </script>
+</html>
