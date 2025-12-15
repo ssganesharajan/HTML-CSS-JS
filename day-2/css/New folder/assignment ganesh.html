@@ -1,0 +1,79 @@
+<html>
+<head>
+    <style>
+        #maintitle{
+            text-align:center;
+            font-size: 35px;
+            color: yellow;
+            margin-bottom: 20px;
+            background: black;
+        }
+    .card{
+        width: 200px;
+        padding: 20px;
+        margin: 15px;
+        border-radius: 10px;
+        background: blue;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        font-family: Arial;
+    }
+    .highlight{
+        background: lightcoral  ;
+        padding: 25px;
+    }
+    /*Layout for cards*/
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+    </style>
+</head>
+    <body><center>
+        <form action="/submit" method="post">
+        <h1 id="maintitle">PRODUCTS FOR SALE</h1>
+        <div class="container">
+            <div class="card">
+                <h2 class="highlight"><img src="laptop.jpg" width="160"></h2>
+                <p><table border="1">
+    <tr>
+        <td> NAME </td>
+        <td> LAPTOP </td>
+    </tr>
+    <tr>
+        <td> PRICE </td>
+        <td> INR 30,000 </td>
+    </tr>
+</table>
+<button type="submit"><a href="site.html">APPLY</a></button></p>
+            </div>
+            <div class="card">
+                <h2 class="highlight"><img src="tab.jpg" width="160"></h2>
+                <p><table border="1">
+    <tr>
+        <td> NAME </td>
+        <td> TABLET </td>
+    </tr>
+    <tr>
+        <td> PRICE </td>
+        <td> INR 20,000 </td>
+    </tr>
+</table>
+<button type="submit"><a href="site.html">APPLY</a></button></p>
+            </div>
+            <div class="card">
+                <h2 class="highlight"><img src="phone.jpg" width="160"></h2>
+                <p><table border="1">
+    <tr>
+        <td> NAME </td>
+        <td> PHONE </td>
+    </tr>
+    <tr>
+        <td> PRICE </td>
+        <td> INR 12,000 </td>
+    </tr>
+</table>
+<button type="submit"><a href="site.html">APPLY</a></button></p>
+            </div></form></center>
+    </body>
+</html>
