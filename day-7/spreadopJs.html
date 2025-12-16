@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <script>
+            // es6 spread operator in javascript
+            const a=[1,2,3];
+            const b=[...a,4,5];
+            console.log(b);//[1, 2, 3, 4, 5]
+
+            //Key values are unique,values are getting overlapped
+            const user={name:"ganesh",city:"thirunalveli"};
+            const updated={...user,city:"coimbatore"};
+            console.log(updated);//{name: 'ganesh', city: 'coimbatore'}
+
+            const x=[1,2];
+            const y=[3,4];
+            const merged=[...x,...y];
+            console.log(merged);//[1, 2, 3, 4]
+
+            //Array as an argument
+            function add(a,b,c){return a+b+c;}
+            const nums=[5,10,15];
+            console.log(add(...nums));//30
+        </script>
+    </body>
+</html>
