@@ -1,0 +1,83 @@
+db.employee.insertOne(
+  {empId: 1, name: 'Clark', dept: 'Sales' }
+);
+
+db.employees.insertMany([
+  {empId: 2, name: 'Dave', dept: 'Accounting' },
+  {empId: 3, name: 'Ava', dept: 'Sales' }
+]);
+
+db.employees.find();
+OUTPUT:
+{ "_id" : ObjectId("694698cf96048106dffce9b1"), "empId" : 1, "name" : "Clark", "dept" : "Sales" }
+{ "_id" : ObjectId("694698cf96048106dffce9b2"), "empId" : 2, "name" : "Dave", "dept" : "Accounting" }
+{ "_id" : ObjectId("694698cf96048106dffce9b3"), "empId" : 3, "name" : "Ava", "dept" : "Sales" }
+
+
+db.employees.find().pretty();
+OUTPUT:
+{ 
+  "_id" : ObjectId("694698cf96048106dffce9b1"), 
+  "empId" : 1, 
+  "name" : "Clark", 
+  "dept" : "Sales" 
+}
+{ 
+  "_id" : ObjectId("694698cf96048106dffce9b2"), 
+  "empId" : 2, 
+  "name" : "Dave", 
+  "dept" : "Accounting" 
+}
+{ 
+  "_id" : ObjectId("694698cf96048106dffce9b3"), 
+  "empId" : 3, 
+  "name" : "Ava", 
+  "dept" : "Sales" 
+}
+
+
+db.employees.find({dept: 'Sales'});
+OUTPUT:
+{ "_id" : ObjectId("694698cf96048106dffce9b1"), "empId" : 1, "name" : "Clark", "dept" : "Sales" }
+{ "_id" : ObjectId("694698cf96048106dffce9b3"), "empId" : 3, "name" : "Ava", "dept" : "Sales" }
+
+
+db.employees.updateone({empId: 2},  {$set: {dept: 'HR'}});
+db.employees.find();
+OUTPUT:
+{ "_id" : ObjectId("694698cf96048106dffce9b1"), "empId" : 1, "name" : "Clark", "dept" : "Sales" }
+{ "_id" : ObjectId("694698cf96048106dffce9b2"), "empId" : 2, "name" : "Dave", "dept" : "HR" }
+{ "_id" : ObjectId("694698cf96048106dffce9b3"), "empId" : 3, "name" : "Ava", "dept" : "Sales" }
+
+
+db.employees.deleteOne({empId: 1});
+db.employees.find();
+OUTPUT:
+{ "_id" : ObjectId("694698cf96048106dffce9b2"), "empId" : 2, "name" : "Dave", "dept" : "HR" }
+{ "_id" : ObjectId("694698cf96048106dffce9b3"), "empId" : 3, "name" : "Ava", "dept" : "Sales" }
+
+
+db.employees.deleteMany({dept: 'Sales'});
+db.employees.find();
+OUTPUT:
+{ "_id" : ObjectId("694698cf96048106dffce9b2"), "empId" : 2, "name" : "Dave", "dept" : "HR" }
+
+
+db.employees.insertMany([
+  {empId: 2, name: 'Dave', dept: 'Accounting' },
+  {empId: 3, name: 'Ava', dept: 'Sales' }
+]);
+
+db.employees.countDocuments();
+OUTPUT:
+3
+
+db.employees.countDocuments({dept: 'Sales'});
+OUTPUT:
+2
+
+
+db.employees.deleteone({empId: 2});
+db.employees.countDocuments();
+OUTPUT:
+2
