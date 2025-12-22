@@ -1,0 +1,40 @@
+SYNC(synchronous function):
+
+exampl:video call
+when a function is sync while the task is going on people involve can interrupt then and there.
+ASYNC:
+ex:email communication
+developer can do multiple task simultaniously.
+
+Note:
+1. By default js functions are sync.
+2. Await can be used only inside async.
+=================================================================
+
+Above code explanation:
+app.get('/users', async (req, res) => {
+        // Defines a GET API at /users
+        // async → allows use of await, returns a Promise
+        // await → pauses until User.find() finishes (DB query)
+        try {
+            const users = await User.find(); // fetch all users
+            res.json(users); // send users as JSON
+    } catch (err) {
+      res.status(500).json({ error: err.message }); // send error if fails    
+}});
+u can write the abice as like the belove also
+
+app.get('/users', (req, res) => {
+        // User.find() itself returns a Promise
+        User.find()
+            .then(users => { // resolve → got data
+              res.json(users);
+           })
+           .catch(err => { // reject → error
+            res.status(500).json({ error: err.message });
+        });});
+
+note:
+await can be used inside async
+async only returns promise
+=================================================================

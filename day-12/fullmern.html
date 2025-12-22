@@ -1,0 +1,157 @@
+create moon folder in desktop
+inside create moonserver folder
+
+use cmd in the path then press enter
+npx create-react-app moonapp
+
+windows+r
+mongod (to start mongodb engine)
+================================
+if not working
+C:\Users\sdeep>cd \
+C:\>mkdir data
+C:\>mkdir data\db
+C:\>mongod
+=======================================
+
+windows+r
+mongosh (to start mongodb shell)
+test> show dbs
+
+go to moon folder
+cmd in path then press enter
+cd moonserver
+code .(it will open vs code)
+open terminal in vs code
+inside cd ..(to move moon folder)
+then enter commands in terminal
+    npm i -y
+    npm install express cors mongoose
+
+Create server.js file inside moonserver folder
+code inside server.js file
+C:\Users\sdeep\OneDrive\Desktop\moon\moonserver\serverfile.js
+========================================================================
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+// connect to mongodb(make sure mongod is running)
+mongoose.connect("mongodb://127.0.0.1:27017/moondb")
+    .then(() => console.log("Hurray - MongoDB connected"))
+    .catch(err => console.error("oops - mongodb connection error:", err));
+
+// define schema + model
+const userSchema = new mongoose.Schema({
+    name: String,
+    gender: String,      // Integers are stored as Numbers in Mongoose
+    total: Number,   // Floats are also stored as Numbers
+});
+const User = mongoose.model('User', userSchema);
+
+// test route
+app.get('/', (req, res) => {
+    res.send("Backend is working!");});
+
+// get all users
+//async function will return a promise, that's what is response for our request
+app.get("/users",async (req,res) =>{
+    try{
+        const users = await User.find();
+        res.json(users);
+    }
+    catch(err){
+        res.status(500).json({error:err.message});
+    }
+});
+
+// Add a new user
+app.post("/users",async(req,res) => {
+    try{
+        const user= new user({name:req.body.name});
+        await user.save();
+        res.json(user);
+    }
+    catch(err){
+        res.status(500).json({error:err.message});
+    }
+});
+
+// Start server
+app.listen(5000,() => console.log("🚀 server running on http://localhost:5000"));
+===========================================================================
+open terminal
+cd moonserver
+node .\serverfile.js
+
+============================================
+if server is not working
+    delete type:common js from package.json
+    
+inside server
+Remove-Item -Recurse -Force node_modules
+Remove-Item -Force package-lock.json
+
+if first command throws error run only second
+now
+npm install express mongoose cors
+==============================================
+
+To start frontend
+code inside app.js
+C:\Users\sdeep\OneDrive\Desktop\moon\moonapp\src\App.js
+===========================================================================
+import React,{useEffect,useState} from 'react';
+
+function App() {
+  const [users,setUsers] = useState([]);
+
+  useEffect(() => {
+    // Fetch users from the backend
+    fetch('http://localhost:5000/users')
+      .then(res => res.json())
+      .then(data => setUsers(data))
+      .catch(error => console.error('Error fetching users:', error));
+  }, []);
+
+  return(
+    <div>
+      <h1>Users</h1>
+      {users.length === 0 ? (<p>No users found.</p>
+      ) : (
+        <ul>
+          {users.map(user => (
+            <li key={user._id}>
+              <b>Name: </b>{user.name}<br/>
+              <b>Gender: </b>{user.gender}<br/>
+              <b>Total: </b>{user.total}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+export default App;
+===========================================================================
+cd..
+cd moonapp
+npm start
+
+============================================
+
+open mongodb compass as database
+connect to localhost:27017
+you can see moonDB moons
+erase existing content in file
+{
+  "name": "ganesh",
+  "age": "22",
+  "weight": "72.6",
+  "class": "cse-a",
+  "area": "coimbatore"
+}
